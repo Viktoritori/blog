@@ -5,4 +5,4 @@ export enum ApiUrls {
 }
 
 
-export const API_ROOT = 'http://my-json-server.typicode.com/orlovskyalex/jellyfish-fake-rest-server';
+export const API_ROOT = 'https://my-json-server.typicode.com/orlovskyalex/jellyfish-fake-rest-server';

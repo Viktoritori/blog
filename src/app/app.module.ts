@@ -7,11 +7,22 @@ import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { CommentsComponent } from './comments/comments.component';
 import { UserComponent } from './user/user.component';
-import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserLinkComponent } from './user-link/user-link.component';
-import { MatButtonModule, MatCardModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    component: FeedComponent
+  },
+  {
+    path: 'user/:id',
+    component: UserComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -24,13 +35,11 @@ import { MatButtonModule, MatCardModule, MatProgressSpinnerModule } from '@angul
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     MatCardModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     MatButtonModule,
-    MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
