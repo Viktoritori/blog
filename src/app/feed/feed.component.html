@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h2>Feed</h2>
+  <div class="post-wrapper" *ngFor="let post of posts | async">
+     <app-post
+       [post]="post.id"
+       [title]="post.title"
+       [body]="post.body">
+     </app-post>
+  </div>
+</div>
+
+
+

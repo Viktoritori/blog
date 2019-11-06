@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="comment-wrapper" *ngFor="let comment of comments | async">
+   {{comment.body}}
+    <app-user-link [userId]="comment.author"></app-user-link>
+  </div>
+</div>
+

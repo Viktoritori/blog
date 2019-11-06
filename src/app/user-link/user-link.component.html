@@ -1,0 +1,4 @@
+
+<div class="user-wrapper" *ngIf="user && !isOnlyNameVisible">
+  <a mat-stroked-button  [routerLink]="['/user', user.id]">{{user.username}}</a>
+</div>

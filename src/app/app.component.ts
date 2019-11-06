@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'simple-blog';
+  constructor(private location: Location,
+              private router: Router) {}
+
+  goBack() {
+    this.location.back();
+  }
+
+  navigateToFeed() {
+    this.router.navigate(['']);
+  }
 }
